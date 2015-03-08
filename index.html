@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Roadtripper</title>
+    <link rel="stylesheet" href="style.css" />
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=geometry"></script>
+    <script type="text/javascript" src="caroverlay.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+  </head>
+  <body>
+    <div id="overviewMap"></div>
+    <div id="followMap"></div>
+    <div id="followMapControls">
+      <label for="autofollow">Follow:</label>
+      <input type="checkbox" id="autofollow" onclick="window.playPathData.autofollow = !window.playPathData.autofollow " />
+    </div>
+    <div id="panorama"></div>
+    <div id="searchControls">
+      <h1>Go on a roadtrip!</h1>
+      <form onsubmit="goOnARoadtrip(); return false;">
+        <table>
+          <tr>
+            <th>Origin:</th>
+            <td>
+              <input type="text" id="origin" />
+            </td>
+          </tr>
+          <tr>
+            <th>Destination:</th>
+            <td>
+              <input type="text" id="destination" />
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              <input type="submit" value="Go!" />
+            </td>
+          </tr>
+        </table>
+      </form>
+    </div>
+    <div id="dashboard">
+      <p id="panoramaControls">
+        <input type="button" id="rewindButton" value="<<" onclick="slowDown()" />
+        <input type="button" id="playPauseButton" value="&#9654;" onclick="window.playPathData.paused = !window.playPathData.paused;" />
+        <input type="button" id="forwardButton" value=">>" onclick="speedUp()" />
+      </p>
+      <table>
+        <tr>
+          <th>Distance:</th>
+          <td><span id="distance"></span></td>
+        </tr>
+        <tr>
+          <th>Speed:</th>
+          <td><span id="speed"></span></td>
+        </tr>
+        <tr>
+          <th>Elapsed:</th>
+          <td><span id="elapsed"></span></td>
+        </tr>
+        <tr>
+          <th>ETA:</th>
+          <td><span id="eta"></span></td>
+        </tr>
+        <tr>
+          <th>Step:</th>
+          <td><span id="step"></span></td>
+        </tr>
+        <tr>
+          <th>Instruction:</th>
+          <td><span id="instructions"></span></td>
+        </tr>
+      </table>
+    </div>
+  </body>
+</html>
+

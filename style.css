@@ -1,0 +1,61 @@
+#overviewMap {
+  position: absolute;
+  top: 0vh;
+  left: 0vh;
+  width: 50vw;
+  height: 50vh;
+}
+
+#followMap {
+  position: absolute;
+  bottom: 0vh;
+  left: 0vh;
+  width: 50vw;
+  height: 50vh;
+}
+
+#followMapControls {
+  position: absolute;
+  left: 1vw;
+  bottom: 32px;
+  border: 1px solid black;
+  background-color: white;
+  border-radius: 1vmin;
+  padding: 1vmin;
+}
+
+#panorama {
+  position: absolute;
+  bottom: 0vh;
+  right: 0vw;
+  width: 50vw;
+  top: 0vh;
+  z-index: 1;
+}
+
+#dashboard {
+  position: absolute;
+  top: 1vh;
+  width: 40vw;
+  right: 5vw;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 2vmax;
+  padding: 1vmin;
+  font-size: larger;
+  z-index: 2;
+}
+
+#searchControls {
+  position: absolute;
+  background-color: white;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  bottom: 0px;
+  z-index: 4;
+}
+
+#panoramaControls {
+  text-align: center;
+}
