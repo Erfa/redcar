@@ -283,7 +283,6 @@ function slowDown() {
 
 function goOnARoadtrip() {
   var request = {
-      key: "AIzaSyCG4mkxh2xpLakodz51CvPjwARoT4Lo8kM",
       origin: document.getElementById('origin').value,
       destination: document.getElementById('destination').value,
       travelMode: google.maps.TravelMode.DRIVING,
@@ -294,5 +293,3 @@ function goOnARoadtrip() {
   initialize(request);
   return false;
 }
-
-//google.maps.event.addDomListener(window, 'load', initialize);
