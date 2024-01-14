@@ -6,7 +6,7 @@ function CarOverlay(url, size) {
   img.style.position = 'absolute';
   img.style.width = size + 'px';
   img.style.height = size + 'px';
-  img.style.webkitTransitionTimingFunction  = 'linear';
+  img.style.transitionTimingFunction  = 'linear';
 
   this._elem = img;
 }
@@ -30,7 +30,7 @@ CarOverlay.prototype.draw = function() {
 
   var overlayProjection = this.getProjection();
 
-  if (overlayProjection === undefined) return;
+  if (!overlayProjection) return;
 
   if (this._position !== undefined) {
     var now = new Date().getTime();
