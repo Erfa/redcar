@@ -18,12 +18,19 @@
     <div id="panorama"></div>
     <div id="searchControls">
       <h1>Go on a roadtrip!</h1>
-      <form onsubmit="goOnARoadtrip(); return false;">
+      <form onsubmit="goOnARoadtrip(this); return false;">
         <table>
           <tr>
             <th>Origin:</th>
             <td>
               <input type="text" id="origin" />
+            </td>
+          </tr>
+          <tr id="addWaypointRow">
+            <th></th>
+            <td>
+              <input type="hidden" name="waypoint" />
+              <input type="button" value="+" onclick="addWaypoint()" />
             </td>
           </tr>
           <tr>
@@ -43,9 +50,9 @@
     </div>
     <div id="dashboard">
       <p id="panoramaControls">
-        <input type="button" id="rewindButton" value="<<" onclick="slowDown()" />
+        <input type="button" id="rewindButton" value="&lt;&lt;" onclick="slowDown()" />
         <input type="button" id="playPauseButton" value="&#9654;" onclick="window.playPathData.paused = !window.playPathData.paused;" />
-        <input type="button" id="forwardButton" value=">>" onclick="speedUp()" />
+        <input type="button" id="forwardButton" value="&gt;&gt;" onclick="speedUp()" />
       </p>
       <table>
         <tr>

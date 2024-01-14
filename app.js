@@ -281,9 +281,28 @@ function slowDown() {
     data.speedMultiplier = -1;
 }
 
-function goOnARoadtrip() {
+function addWaypoint() {
+  document.getElementById("addWaypointRow").insertAdjacentHTML(
+    'beforebegin',
+    '<tr><th></th><td><input type="text" name="waypoint" /></td></tr>',
+  );
+}
+
+function goOnARoadtrip(form) {
+  const waypoints = []
+  const waypointsElements = form.elements.waypoint
+
+  if (waypointsElements) {
+    for (let i = 0; i < waypointsElements.length; ++i) {
+      const waypoint = waypointsElements[i].value
+      if (waypoint)
+        waypoints.push({location: waypoint})
+    }
+  }
+
   var request = {
       origin: document.getElementById('origin').value,
+      waypoints: waypoints,
       destination: document.getElementById('destination').value,
       travelMode: google.maps.TravelMode.DRIVING,
       avoidHighways: false,
